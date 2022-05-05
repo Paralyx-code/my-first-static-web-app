@@ -11,15 +11,19 @@
 <body>
   <main>
     <h1>Vanilla JavaScript App</h1>
+    <div id="div-test">test</div>
   </main>
 </body>
 
 <script>
+  var div = document.getElementById("div-test");
   // check compatibility
   if (!('BarcodeDetector' in window)) {
     console.log('Barcode Detector is not supported by this browser.');
+    div.innerHTML = 'Barcode Detector is not supported by this browser.'
   } else {
     console.log('Barcode Detector supported!');
+    div.innerHTML = 'Barcode Detector supported!'
 
     // create new detector
     var barcodeDetector = new BarcodeDetector({ formats: ['code_39', 'codabar', 'ean_13'] });
