@@ -1,43 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">  
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Star Wars Intro App</title>
 </head>
-
 <body>
-  <main>
-    <h1>Vanilla JavaScript App</h1>
-    <div id="div-test">test</div>
-  </main>
+  <script src="js/intro.js"></script>
 </body>
-
-<script>
-  var div = document.getElementById("div-test");
-  // check compatibility
-  if (!('BarcodeDetector' in window)) {
-    console.log('Barcode Detector is not supported by this browser.');
-    div.innerHTML = 'Barcode Detector is not supported by this browser.'
-  } else {
-    console.log('Barcode Detector supported!');
-    div.innerHTML = 'Barcode Detector supported!'
-
-    // create new detector
-    var barcodeDetector = new BarcodeDetector({ formats: ['code_39', 'codabar', 'ean_13'] });
-
-    // check supported types
-    BarcodeDetector.getSupportedFormats()
-      .then(supportedFormats => {
-        supportedFormats.forEach(format => console.log(format));
-      });
-
-  }
-
-
-
-</script>
-
 </html>
